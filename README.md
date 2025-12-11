@@ -59,21 +59,11 @@ The challenge places a significant emphasis on data collection and utilization, 
 
 ## Evaluation and Ranking
 
-Task metrics are designed such that higher values indicate better performance. The overall score is computed via a weighted average of normalized metrics across all tasks. For each task $T_i$, the metric $M_i$ (e.g., Acc, iWER, mAP) is normalized using:
+Performance is evaluated separately for Task 1 and Task 2.
 
-$$
-\hat{M}_{i} = \frac{M_{i} - M_{i}^{\min}}{M_{i}^{\max} - M_{i}^{\min}}
-$$
+For each task, its raw score is converted into a final normalized value between 0 and 1, where 0 corresponds to the worst possible outcome and 1 to the best possible outcome for that specific task.
 
-where $\hat{M_{i}}$ is the normalized metric, and $M_{i}^{\min}$ and $M_{i}^{\max}$ are the worst and best possible values of $M_i$, respectively.
-
-The final score $S$ is calculated as average across ass normalized scores:
-
-$$
-S = \sum_{i=1}^{N_{\text{task}}} \hat{M}_i
-$$
-
-where $N_{\text{task}}$ is the total number of tasks.
+The final result for each task is the simple average of the normalized scores. The two scores are calculated and reported individually, without being combined into an overall average.
 
 ## How to Participate
 
